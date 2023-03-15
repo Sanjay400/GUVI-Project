@@ -25,18 +25,22 @@ $(document).ready(function() {
 	// Update profile
 	$("#update-btn").click(function() {
 		// Retrieve form data
-		var dob = $("#dob").val();
-		var phone = $("#phone").val();
+		var firstname = $("#firstname").val();
+		var lastname = $("#lastname").val();
+		var phone number = $("#phone number").val();
 		var age = $("#age").val();
+		var dob = $("#dob").val();
 
 		// Send data to server to update profile
 		$.ajax({
 			url: "update-profile.php",
 			type: "POST",
 			data: {
-				dob: dob,
-				phone: phone,
+				firstname : firstname,
+				lastname :  lastname,
+				phone : phone,
 				age: age
+				dob : dob,
 			},
 			success: function(response) {
 				console.log("Profile updated: " + response);
